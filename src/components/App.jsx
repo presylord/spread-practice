@@ -16,7 +16,13 @@ function App() {
     setEntry("");
   }
   function deleteItem(event) {
-    console.log(event.target.id);
+    const id = event.target.id;
+
+    setItem((prevItems) => {
+      return prevItems.filter((item, index) => {
+        return index != id;
+      });
+    });
   }
 
   return (
